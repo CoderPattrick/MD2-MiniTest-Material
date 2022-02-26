@@ -20,11 +20,17 @@ public class CrispyFlourManager extends MaterialManager<CrispyFlour> implements 
                 today=today.plusMonths(1);
                 cnt++;
                 if(cnt>4){
-                    discount =  10/100;
+                    discount =  5/100;
                     return (1-discount)*cost;
                 }
             }
-            discount = 5/100;
+            cnt--;
+            if(cnt<=2){
+                discount=40/100;
+            }
+            else {
+                discount = 20/100;
+            }
             return (1-discount)*cost;
         }
         return 0;
