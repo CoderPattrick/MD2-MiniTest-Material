@@ -1,7 +1,7 @@
 package Controller;
 
-public interface Discount<T> {
-    double getRealMoney(T obj);
+public interface Discount {
+    double getRealMoney();
 }
 //Tạo 1 lớp quản lý vật liệu
 //        Tạo mới 5 đối tượng bột, 5 đối tượng thịt

@@ -1,5 +1,6 @@
 package Model;
 
+import Controller.Discount;
 import Controller.MaterialManager;
 import org.w3c.dom.Node;
 
@@ -14,8 +15,19 @@ public class Meat extends Material {
         this.weight = weight;
     }
 
-    public Meat(String id, String name, LocalDate manufacturingDate, int cost, double weight) {
-        super(id, name, manufacturingDate, cost);
+    @Override
+    public String toString() {
+        return "Meat{" +
+                "id='" + getId() + '\'' +
+                ", name='" + getName() + '\'' +
+                ", manufacturingDate=" + getManufacturingDate() +
+                ", cost=" + getCost() +
+                ", weight=" + weight +
+                '}';
+    }
+
+    public Meat(String id, String name, int cost, double weight) {
+        super(id, name, cost);
         this.weight = weight;
     }
 
@@ -34,5 +46,28 @@ public class Meat extends Material {
     public LocalDate getExpireDate() {
         LocalDate temp=getManufacturingDate().plusDays(7);
         return temp;
+    }
+    @Override
+    public double getRealMoney() {
+        LocalDate today = LocalDate.now();
+        LocalDate expireDate = getExpireDate();
+        if(today.isBefore(expireDate)){
+            int cnt =0;
+            double discount,realCost;
+            double cost = getCost();
+            while(!today.isEqual(expireDate)){
+                today=today.plusDays(1);
+                cnt++;
+                if(cnt>5){
+                    discount =  10;
+                    realCost = cost-discount*cost/100;
+                    return realCost;
+                }
+            }
+            discount = 30;
+            realCost = cost-discount*cost/100;
+            return realCost;
+        }
+        return 0;
     }
 }

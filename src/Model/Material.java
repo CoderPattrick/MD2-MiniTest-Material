@@ -1,7 +1,9 @@
 package Model;
+import Controller.Discount;
+
 import java.time.LocalDate;
 
-public abstract class Material {
+public abstract class Material implements Discount {
     private String id;
     private String name;
     private LocalDate manufacturingDate;
@@ -42,10 +44,9 @@ public abstract class Material {
     public Material() {
     }
 
-    public Material(String id, String name, LocalDate manufacturingDate, int cost) {
+    public Material(String id, String name,int cost) {
         this.id = id;
         this.name = name;
-        this.manufacturingDate = manufacturingDate;
         this.cost = cost;
     }
     abstract double getAmount();
