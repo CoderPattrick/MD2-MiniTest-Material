@@ -1,9 +1,5 @@
 package Model;
 
-import Controller.Discount;
-import Controller.MaterialManager;
-import org.w3c.dom.Node;
-
 import java.time.LocalDate;
 
 public class Meat extends Material {
@@ -54,7 +50,7 @@ public class Meat extends Material {
         if(today.isBefore(expireDate)){
             int cnt =0;
             double discount,realCost;
-            double cost = getCost();
+            double cost = getAmount();
             while(!today.isEqual(expireDate)){
                 today=today.plusDays(1);
                 cnt++;

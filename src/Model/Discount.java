@@ -1,4 +1,4 @@
-package Controller;
+package Model;
 
 public interface Discount {
     double getRealMoney();

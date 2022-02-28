@@ -1,5 +1,4 @@
 package Model;
-import Controller.Discount;
 
 import java.time.LocalDate;
 
@@ -53,7 +52,7 @@ public class CrispyFlour extends Material {
         if(today.isBefore(expireDate)){
             int cnt =0;
             double discount,realCost;
-            double cost = getCost();
+            double cost = getAmount();
             while(today.isBefore(expireDate)){
                 today=today.plusMonths(1);
                 cnt++;

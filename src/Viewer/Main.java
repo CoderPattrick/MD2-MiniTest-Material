@@ -7,17 +7,17 @@ import java.util.LinkedList;
 public class Main {
     public static void main(String[] args) {
         LinkedList<Material> listMaterials = new LinkedList<>();
-        Material meat1 = new Meat("m1","beef",100000,100);
-        Material meat2 = new Meat("m2","beef",110000,110);
-        Material meat3 = new Meat("m3","pork",80000,80);
-        Material meat4 = new Meat("m4","chicken",60000,40);
-        Material meat5 = new Meat("m5","beef",120000,120);
+        Material meat1 = new Meat("m1","beef",10000,100);
+        Material meat2 = new Meat("m2","beef",11000,110);
+        Material meat3 = new Meat("m3","pork",8000,80);
+        Material meat4 = new Meat("m4","chicken",6000,40);
+        Material meat5 = new Meat("m5","beef",12000,120);
 
-        Material flour1 = new CrispyFlour("f1","JustFlour",30000,35);
-        Material flour2 = new CrispyFlour("f2","JustFlour",40000,32);
-        Material flour3 = new CrispyFlour("f3","JustFlour",30000,30);
-        Material flour4 = new CrispyFlour("f4","JustFlour",30000,36);
-        Material flour5 = new CrispyFlour("f5","JustFlour",30000,32);
+        Material flour1 = new CrispyFlour("f1","JustFlour",3000,35);
+        Material flour2 = new CrispyFlour("f2","JustFlour",4000,32);
+        Material flour3 = new CrispyFlour("f3","JustFlour",3000,30);
+        Material flour4 = new CrispyFlour("f4","JustFlour",3000,36);
+        Material flour5 = new CrispyFlour("f5","JustFlour",3000,32);
 
         meat1.setManufacturingDate(LocalDate.of(2022,2,27));
         meat2.setManufacturingDate(LocalDate.of(2022,2,26));
